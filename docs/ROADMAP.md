@@ -7,8 +7,10 @@
 - [x] Optional configurable Hugging Face Inference API adapter
 - [x] Selenium-Java/JUnit 5 Page Object Model demo against a local synthetic app
 - [x] Python and Java CI checks
-- [ ] Requirement persistence and traceable human approval workflow
-- [ ] API test-case categories for positive, negative, boundary, and contract cases
+- [x] Requirement IDs and traceable structured draft metadata
+- [x] Review-state schema with draft-first, non-executable output
+- [ ] Requirement persistence and durable human approval workflow
+- [ ] API test-case category generation for positive, negative, boundary, and business-rule cases
 
 ## Phase 2 — Evidence and execution
 

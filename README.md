@@ -8,10 +8,12 @@ evaluation; no experience or benchmark claims are implied.
 
 ## Current status
 
-**MVP: draft-only test generation and a runnable local browser demo.**
+**MVP: traceable draft-only test generation and a runnable local browser demo.**
 
 - The API validates submitted requirements and returns structured test-case
-  drafts. The default generator is deterministic and requires no model or GPU.
+  drafts. Each case references its requirement ID, includes an objective,
+  assumptions, acceptance criteria, scenario type, and starts in `draft` review
+  status. The default generator is deterministic and requires no model or GPU.
 - An optional Hugging Face Inference API adapter can be selected by
   configuration. Model output remains untrusted draft text and always requires
   QA approval.
@@ -69,7 +71,7 @@ is rejected; it is not silently replaced by deterministic output.
 
 ## Quick start: Selenium-Java demo
 
-Requires Java 17+, Maven, and Google Chrome. Run independently from FastAPI:
+Requires Java 25+, Maven, and Google Chrome. Run independently from FastAPI:
 
 ```powershell
 Set-Location examples\java
@@ -99,7 +101,12 @@ results before use. Never execute untrusted generated code. Test only systems
 you own or are authorized to assess.
 
 See [Architecture](docs/ARCHITECTURE.md), [Evaluation methodology](docs/EVALUATION.md),
-and [MVP roadmap](docs/ROADMAP.md).
+and [MVP roadmap](docs/ROADMAP.md). Current limitations and verification status
+are recorded in [Project status](docs/PROJECT_STATUS.md).
+
+## Contributors
+
+See [CONTRIBUTORS.md](CONTRIBUTORS.md) for project credits and attribution rules.
 
 ## Project credits
 

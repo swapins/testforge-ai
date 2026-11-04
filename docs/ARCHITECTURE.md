@@ -13,6 +13,15 @@
 5. All results are explicitly marked as requiring QA review and
    non-executable. No generated code is run.
 
+## Traceability and review state
+
+`Requirement.requirement_id` is the stable trace key. Generated `TestCase`
+objects copy that ID and include a scenario type, objective, acceptance
+criteria, assumptions, explicit expected result, and `review_status`. Every
+generated case starts as `draft`; `approved` and `rejected` are reserved review
+states. This metadata does not authorize execution, and `GenerationResult`
+always remains `executable: false`.
+
 ## Configuration
 
 | Variable | Default | Purpose |
