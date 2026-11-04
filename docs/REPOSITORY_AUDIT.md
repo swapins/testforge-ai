@@ -13,8 +13,12 @@ Audit date: 2026-11-04 (Asia/Singapore)
 
 ## Findings and severity
 
-- **High (fixed):** Java CI, Maven compiler release, and README had to agree on
-  the intended Java version; the preserved local edits align them at Java 25.
+- **High (fixed):** Java CI, Maven compiler release, and README now agree on
+  Java 17, which is sufficient for the demo and preserves the project’s
+  original compatibility baseline.
+- **High (fixed):** CI now passes the browser binary installed by
+  `browser-actions/setup-chrome` to Selenium, preventing the runner’s separate
+  system Chrome from being paired with the installed ChromeDriver.
 - **Medium (fixed):** The project had no standalone contributor document and
   attribution was only in README; `CONTRIBUTORS.md` now records the supplied
   credits without addresses.

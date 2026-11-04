@@ -71,7 +71,7 @@ is rejected; it is not silently replaced by deterministic output.
 
 ## Quick start: Selenium-Java demo
 
-Requires Java 25+, Maven, and Google Chrome. Run independently from FastAPI:
+Requires Java 17+, Maven, and Google Chrome. Run independently from FastAPI:
 
 ```powershell
 Set-Location examples\java

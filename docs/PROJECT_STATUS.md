@@ -13,7 +13,11 @@
 
 - The Hugging Face adapter requires the optional dependency, a configured model,
   network access, and any required token.
-- Selenium execution requires Java 25, Maven, Chrome, and a compatible driver.
+- Selenium execution requires Java 17, Maven, Chrome, and a compatible driver.
+
+Java 17 is the CI/build baseline: the demo uses no Java 25-specific APIs or
+language features, so Java 25 is not required. The workflow supplies the exact
+browser binary installed by `browser-actions/setup-chrome` to Selenium.
 
 ## Experimental or planned
 

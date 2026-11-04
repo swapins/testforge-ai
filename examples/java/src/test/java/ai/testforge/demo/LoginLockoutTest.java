@@ -19,6 +19,12 @@ class LoginLockoutTest {
     void setUp() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage");
+        String chromeBinary = System.getProperty(
+                "testforge.chrome.binary",
+                System.getenv("TESTFORGE_CHROME_BINARY"));
+        if (chromeBinary != null && !chromeBinary.isBlank()) {
+            options.setBinary(chromeBinary);
+        }
         driver = new ChromeDriver(options);
         loginPage = new LoginPage(driver).openDemo();
     }
