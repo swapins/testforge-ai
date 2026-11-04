@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TestForge Demo Login</title>
+</head>
+<body>
+  <main>
+    <h1>Demo account login</h1>
+    <label for="username">Username</label>
+    <input id="username" autocomplete="username">
+    <label for="password">Password</label>
+    <input id="password" type="password" autocomplete="current-password">
+    <button id="login" type="button">Sign in</button>
+    <p id="message" role="status" aria-live="polite"></p>
+  </main>
+  <script>
+    (() => {
+      let failedAttempts = 0;
+      const username = document.getElementById("username");
+      const password = document.getElementById("password");
+      const button = document.getElementById("login");
+      const message = document.getElementById("message");
+
+      button.addEventListener("click", () => {
+        if (button.disabled) return;
+        if (username.value === "demo" && password.value === "correct-password") {
+          failedAttempts = 0;
+          message.textContent = "Signed in.";
+          return;
+        }
+        failedAttempts += 1;
+        if (failedAttempts >= 5) {
+          button.disabled = true;
+          message.textContent = "Account locked for 15 minutes.";
+          return;
+        }
+        message.textContent = "Invalid username or password.";
+      });
+    })();
+  </script>
+</body>
+</html>
