@@ -103,13 +103,16 @@ and [MVP roadmap](docs/ROADMAP.md).
 
 ## Project credits
 
-**Developed under Techsphere**
+**Published by [TechSphere Consultancy Services Private Limited](https://techsphereconsultancy.com/)**
 
 - **Developer:** Saritha S
-- **Co-author:** Swapin Vidya
+- **Co-authors:** Swapin Vidya and [Rajah Shanmugasundaram](https://www.linkedin.com/in/rajahshan/)
+- **Publishing company:** TechSphere Consultancy Services Private Limited
+- **Corporate Identification Number (CIN):** U62020TN2025PTC177827
+- **Company website:** https://techsphereconsultancy.com/
 
-This section records the project's designated roles. Individual Git commit
-authorship and contributions remain attributed to the people who performed them.
+These are designated project credits; individual Git commit authorship remains
+attributed to the people who made the commits.
 
 ## License and attribution
 
