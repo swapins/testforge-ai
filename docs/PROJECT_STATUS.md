@@ -19,6 +19,16 @@ Java 17 is the CI/build baseline: the demo uses no Java 25-specific APIs or
 language features, so Java 25 is not required. The workflow supplies the exact
 browser binary installed by `browser-actions/setup-chrome` to Selenium.
 
+## Designated project responsibilities
+
+- **Developer:** Saritha S — implementation and development role.
+- **QA reviewer:** Swapin Vidya — designated reviewer for QA test-case decisions.
+- **Co-authors:** Swapin Vidya and Rajah Shanmugasundaram (project credits).
+
+The current pilot accepts a self-declared reviewer label. Assigning Swapin Vidya
+as the designated reviewer in documentation does not authenticate the caller;
+reviewer identity enforcement is required before external or production use.
+
 ## Experimental or planned
 
 - Model-assisted generation is experimental and has no benchmark claim.
