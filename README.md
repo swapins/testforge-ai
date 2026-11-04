@@ -69,6 +69,25 @@ terms have been reviewed. Do not send confidential requirements, credentials,
 customer data, or production logs to an external model. Malformed model output
 is rejected; it is not silently replaced by deterministic output.
 
+## Experimental persistent QA review (Phase 2)
+
+This feature branch introduces pilot SQLite persistence with an append-only
+review-event history. Configure `TESTFORGE_REVIEW_API_KEY` (required) and
+optionally `TESTFORGE_DB_PATH` (default: `testforge.sqlite3`).
+Send the API key using `X-Review-Key`. The protected endpoints are:
+
+- `POST /v1/review/generations` — persist a requirement and its draft test cases.
+- `GET /v1/review/cases/{case_id}` — retrieve a saved case and review status.
+- `POST /v1/review/cases/{case_id}/decision` — record approved/rejected decision;
+  also requires `X-Reviewer` identifying the reviewer.
+- `GET /v1/review/cases/{case_id}/history` — retrieve audit events.
+
+This is a **local pilot**, not production identity verification: the supplied
+reviewer label is not independently authenticated. Do not expose this service
+directly to untrusted users. Approval never authorises execution of generated
+code, and duplicate requirements return HTTP 409 rather than overwrite data.
+The original endpoints remain unchanged and non-persistent.
+
 ## Quick start: Selenium-Java demo
 
 Requires Java 17+, Maven, and Google Chrome. Run independently from FastAPI:
