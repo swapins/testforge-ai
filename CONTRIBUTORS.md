@@ -6,6 +6,7 @@
 - **Website:** https://techsphereconsultancy.com/
 - **CIN:** U62020TN2025PTC177827
 - **Developer:** Saritha S
+- **Designated QA reviewer:** Swapin Vidya
 - **Co-authors:** Swapin Vidya; Rajah Shanmugasundaram (https://www.linkedin.com/in/rajahshan/)
 
 These designated project credits do not replace or alter Git commit authorship.
