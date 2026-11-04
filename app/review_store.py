@@ -47,7 +47,7 @@ def initialize() -> None:
                 requirement_id TEXT NOT NULL REFERENCES requirements(id),
                 payload TEXT NOT NULL,
                 review_status TEXT NOT NULL DEFAULT 'draft'
-                    CHECK(review_status IN ('draft','approved','rejected')),
+                    CHECK(review_status IN ('draft','submitted','approved','rejected')),
                 version INTEGER NOT NULL DEFAULT 0
             );
             CREATE TABLE IF NOT EXISTS review_events (
