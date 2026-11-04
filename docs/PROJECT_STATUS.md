@@ -31,5 +31,8 @@ browser binary installed by `browser-actions/setup-chrome` to Selenium.
 
 ## Known limitations
 
-Generated cases are suggestions, not verified executable tests. The service does
-not persist requirements or review decisions and never executes generated code.
+Generated cases are suggestions, not verified executable tests. The baseline
+endpoints do not persist data. The experimental review API stores requirements,
+cases and decision history in SQLite; it does not authenticate reviewer identities
+beyond a shared API key and a self-declared reviewer label. The service never
+executes generated code.
