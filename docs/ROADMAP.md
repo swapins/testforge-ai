@@ -9,13 +9,14 @@
 - [x] Python and Java CI checks
 - [x] Requirement IDs and traceable structured draft metadata
 - [x] Review-state schema with draft-first, non-executable output
-- [ ] Requirement persistence and durable human approval workflow
-- [ ] API test-case category generation for positive, negative, boundary, and business-rule cases
+- [x] Requirement persistence and durable human approval workflow
+- [x] API test-case category generation for positive, negative, boundary, and business-rule cases
 
 ## Phase 2 — Evidence and execution
 
-- [ ] Export reviewed cases to Selenium-Java and API automation templates
-- [ ] Add explicitly authorized, isolated test execution and run evidence
+- [x] Export approved supported cases through a controlled template renderer
+- [x] Add explicitly authorized local execution gate and run evidence
+- [ ] Add a dedicated restricted execution container and screenshots
 - [ ] Add JMeter/performance-test examples and define safe test-environment limits
 - [ ] Track flaky runs and reproducibility without treating a pass as correctness
 

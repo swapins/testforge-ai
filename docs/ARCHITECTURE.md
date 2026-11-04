@@ -41,10 +41,25 @@ ChromeDriver and interacts with the bundled static login demonstration through
 the `LoginPage` Page Object. It has no dependency on or network connection to
 the FastAPI service. Credentials and behavior in the demo are synthetic.
 
+## Authenticated MVP boundary
+
+The SQLite store is extended with users, bearer sessions, projects, requirement
+revisions, and execution records. Passwords use PBKDF2-SHA256. Backend role
+checks distinguish the Developer (`saritha`) from the QA Reviewer (`swapin`);
+the developer cannot approve a case. Cases move through
+`draft → submitted → approved/rejected`, and review events are append-only.
+
+The exporter emits only a fixed login/lockout template. It does not accept
+source code, imports, shell commands, URLs, or arbitrary paths from users or
+models. The executor accepts only approved supported cases and invokes the
+bundled synthetic Maven test with a fixed command. It is disabled by default.
+
+The `frontend` directory contains the React/Vite dashboard. It is a thin client
+for the authenticated API, while authorization remains entirely server-side.
+
 ## Not implemented
 
-The project has no durable requirement database, login to external systems,
-generated-code execution, sandbox, model fine-tuning, automated test oracle,
-defect classifier, API system-under-test, JMeter integration, or production
-telemetry. Those must be implemented and evaluated before being described as
-capabilities.
+The project has no production identity provider, dedicated restricted execution
+container, screenshot capture, model fine-tuning, automated test oracle, defect
+classifier, API system-under-test, JMeter integration, or production telemetry.
+Those must be implemented and evaluated before being described as capabilities.

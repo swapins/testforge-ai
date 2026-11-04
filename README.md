@@ -8,7 +8,8 @@ evaluation; no experience or benchmark claims are implied.
 
 ## Current status
 
-**MVP: traceable draft-only test generation and a runnable local browser demo.**
+**MVP v1.0: authenticated, traceable draft generation with controlled export and
+an integrated dashboard.**
 
 - The API validates submitted requirements and returns structured test-case
   drafts. Each case references its requirement ID, includes an objective,
@@ -18,6 +19,11 @@ evaluation; no experience or benchmark claims are implied.
   configuration. Model output remains untrusted draft text and always requires
   QA approval.
 - Selenium tests run separately against a local demonstration login page.
+- An authenticated SQLite workflow supports developer and QA reviewer roles,
+  projects, submission, approval/rejection, immutable approved cases, controlled
+  export, and a disabled-by-default local execution pathway.
+- A React/Vite dashboard provides sign-in, project creation, and visible review
+  guardrails against the backend API.
 - There is no test-code generation or execution, model fine-tuning, automated
   test validation, defect detection, persistent requirement store, or
   performance-testing integration.
@@ -123,6 +129,26 @@ See [Architecture](docs/ARCHITECTURE.md), [Evaluation methodology](docs/EVALUATI
 and [MVP roadmap](docs/ROADMAP.md). Current limitations and verification status
 are recorded in [Project status](docs/PROJECT_STATUS.md).
 
+## MVP authenticated workflow
+
+The first-run operator bootstraps local accounts with passwords supplied at
+runtime. `saritha` is the Developer account and `swapin` is the QA Reviewer
+account. The backend enforces roles; the dashboard is not an authorization
+boundary. See the [user guide](docs/USER_GUIDE.md) for the reproducible flow.
+
+The review path is `draft → submitted → approved/rejected`. Only approved cases
+can use the controlled exporter. Execution is restricted to the bundled
+synthetic Maven demo and is disabled unless explicitly enabled by the operator.
+
+## Docker Compose
+
+```powershell
+docker compose up --build
+```
+
+The API is available at `http://localhost:8000` and the Vite dashboard at
+`http://localhost:5173`. See [deployment](docs/DEPLOYMENT.md).
+
 ## Contributors
 
 See [CONTRIBUTORS.md](CONTRIBUTORS.md) for project credits and attribution rules.
@@ -132,6 +158,7 @@ See [CONTRIBUTORS.md](CONTRIBUTORS.md) for project credits and attribution rules
 **Published by [TechSphere Consultancy Services Private Limited](https://techsphereconsultancy.com/)**
 
 - **Developer:** Saritha S
+- **Designated QA reviewer:** Swapin Vidya
 - **Co-authors:** Swapin Vidya and [Rajah Shanmugasundaram](https://www.linkedin.com/in/rajahshan/)
 - **Publishing company:** TechSphere Consultancy Services Private Limited
 - **Corporate Identification Number (CIN):** U62020TN2025PTC177827
