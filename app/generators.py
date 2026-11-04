@@ -53,7 +53,7 @@ def generate_deterministic(requirement: Requirement) -> GenerationResult:
         test_cases.append(TestCase(
             id=f"{requirement.requirement_id}-TC{index:03d}",
             requirement_id=requirement.requirement_id,
-            title=title,
+            title=f"{requirement.title}: {title}",
             scenario_type=scenario_type,
             objective=objective,
             steps=[

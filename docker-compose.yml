@@ -1,0 +1,19 @@
+services:
+  api:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      TESTFORGE_DB_PATH: /data/testforge.sqlite3
+      TESTFORGE_ENABLE_EXECUTION: "0"
+      TESTFORGE_GENERATOR: deterministic
+    volumes: ["testforge-data:/data"]
+  dashboard:
+    image: node:20-bookworm-slim
+    working_dir: /workspace
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    environment:
+      VITE_API_PROXY: http://api:8000
+    ports: ["5173:5173"]
+    volumes: ["./frontend:/workspace"]
+volumes:
+  testforge-data:

@@ -10,3 +10,12 @@ coverage.xml
 htmlcov/
 target/
 *.class
+frontend/node_modules/
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
+testforge.sqlite3
+
+# Local pilot QA database
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
