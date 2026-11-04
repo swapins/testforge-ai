@@ -101,8 +101,17 @@ you own or are authorized to assess.
 See [Architecture](docs/ARCHITECTURE.md), [Evaluation methodology](docs/EVALUATION.md),
 and [MVP roadmap](docs/ROADMAP.md).
 
+## Project credits
+
+**Developed under Techsphere**
+
+- **Developer:** Saritha S
+- **Co-author:** Swapin Vidya
+
+This section records the project's designated roles. Individual Git commit
+authorship and contributions remain attributed to the people who performed them.
+
 ## License and attribution
 
-Licensed under Apache-2.0; see [LICENSE](LICENSE). Project ownership and
-contributor attribution should reflect actual contributions. No benchmark or
+Licensed under Apache-2.0; see [LICENSE](LICENSE). Individual contributions must be credited accurately. No benchmark or
 professional-experience claims are made by this repository.
