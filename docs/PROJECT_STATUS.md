@@ -19,15 +19,30 @@ Java 17 is the CI/build baseline: the demo uses no Java 25-specific APIs or
 language features, so Java 25 is not required. The workflow supplies the exact
 browser binary installed by `browser-actions/setup-chrome` to Selenium.
 
+## Designated project responsibilities
+
+- **Developer:** Saritha S — implementation and development role.
+- **QA reviewer:** Swapin Vidya — designated reviewer for QA test-case decisions.
+- **Co-authors:** Swapin Vidya and Rajah Shanmugasundaram (project credits).
+
+The current pilot accepts a self-declared reviewer label. Assigning Swapin Vidya
+as the designated reviewer in documentation does not authenticate the caller;
+reviewer identity enforcement is required before external or production use.
+
 ## Experimental or planned
 
 - Model-assisted generation is experimental and has no benchmark claim.
-- Review decisions are currently schema-level metadata; persistence and a durable
-  approval workflow are planned.
+- Pilot SQLite persistence and append-only review events are implemented on the
+  Phase 2 feature branch; GitHub CI verification is pending. A single shared
+  API key gates write/read access, but the supplied reviewer identifier is not
+  independently authenticated. This is not production-grade identity assurance.
 - Selenium export, isolated execution evidence, and regression recommendations
   are planned.
 
 ## Known limitations
 
-Generated cases are suggestions, not verified executable tests. The service does
-not persist requirements or review decisions and never executes generated code.
+Generated cases are suggestions, not verified executable tests. The baseline
+endpoints do not persist data. The experimental review API stores requirements,
+cases and decision history in SQLite; it does not authenticate reviewer identities
+beyond a shared API key and a self-declared reviewer label. The service never
+executes generated code.
