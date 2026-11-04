@@ -22,8 +22,10 @@ browser binary installed by `browser-actions/setup-chrome` to Selenium.
 ## Experimental or planned
 
 - Model-assisted generation is experimental and has no benchmark claim.
-- Review decisions are currently schema-level metadata; persistence and a durable
-  approval workflow are planned.
+- Pilot SQLite persistence and append-only review events are implemented on the
+  Phase 2 feature branch; GitHub CI verification is pending. A single shared
+  API key gates write/read access, but the supplied reviewer identifier is not
+  independently authenticated. This is not production-grade identity assurance.
 - Selenium export, isolated execution evidence, and regression recommendations
   are planned.
 
