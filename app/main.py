@@ -4,6 +4,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
 from app.generators import GenerationError, generate
+from app.review_api import router as review_router
 from app.schemas import (
     GenerationResult,
     Requirement,
@@ -42,3 +43,7 @@ def submit_requirement(requirement: Requirement) -> RequirementSubmission:
 def generate_test_cases(requirement: Requirement) -> GenerationResult:
     """Generate structured, non-executable test-case drafts."""
     return generate(requirement)
+
+
+# Experimental, authenticated pilot endpoints for durable QA review.
+app.include_router(review_router)
